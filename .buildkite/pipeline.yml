@@ -6,6 +6,8 @@ env:
 
 steps:
   - label: ":shell: Shellcheck"
+    agents:
+      queue: "foo"
     plugins:
       shellcheck#v1.3.0:
         files:
