@@ -6,6 +6,7 @@ if [[ -n "${RESTORE_REGISTRY_FROM:-}" ]]; then
   buildkite-agent artifact download --step "${RESTORE_REGISTRY_FROM}" docker-registry.tar.gz .
   tar -xzf docker-registry.tar.gz
 fi
+mkdir -p tmp/registry
 
 echo "~~~ Starting test Docker registry"
 docker run -d \
