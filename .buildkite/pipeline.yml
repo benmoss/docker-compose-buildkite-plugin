@@ -1,8 +1,9 @@
 steps:
   - label: ":shell: Shellcheck"
     plugins:
-      shellcheck:
-        files:
-          - hooks/**
-          - lib/**
-          - commands/**
+      kubernetes:
+        containers:
+        - image: docker.io/bmo/helloworld-go
+          env:
+          - name: TARGET
+            value: "Go Sample v1"
