@@ -1,9 +1,11 @@
 steps:
-  - label: ":shell: Shellcheck"
-    plugins:
-      kubernetes:
-        containers:
-        - image: docker.io/bmo/helloworld-go
-          env:
-          - name: TARGET
-            value: "Go Sample v1"
+- name: build image
+  plugins:
+  - kubernetes:
+      containers:
+      - image: gcr.io/kaniko-project/executor:latest
+        command: executor
+        args:
+        - --dockerfile=Dockerfile
+        - --context=.
+        - --destination=ttl.sh/demo:10m
