@@ -1,7 +1,7 @@
 steps:
 - name: build image
   agents:
-    kubernetes: true
+    queue: kubernetes
   plugins:
   - kubernetes:
       containers:
