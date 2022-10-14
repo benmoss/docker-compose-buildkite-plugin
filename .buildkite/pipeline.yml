@@ -6,7 +6,7 @@ steps:
   - kubernetes:
       containers:
       - image: gcr.io/kaniko-project/executor:latest
-        command: executor
+        command: [executor]
         args:
         - --dockerfile=Dockerfile
         - --context=.
